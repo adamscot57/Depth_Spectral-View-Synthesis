@@ -15,6 +15,8 @@ python train.py --data_path kitti_data --log_dir logs/  --model_name stereo_dept
 python test_simple.py  --image_path test_img/  --model_path logs/stereo_depth_clue/models/weights_19  --num_layers 18
 ```
 
+Spectral consistency trained model can be found as:
+[stereo_depth_clue](https://mega.nz/folder/rRtQDTBQ#q2kYmHExUMVA9ASuC4-66g)
 
 # Stereo synthesis depth estimation
 **Train:**
@@ -43,11 +45,11 @@ python mono_uncertainty/generate_maps.py --data_path kitti_data  --load_weights_
 ```
 
 ```
-python mono_uncertainty/generate_maps.py --data_path kitti_data  --load_weights_folder S/S/Monodepth2-Post/models/weights_19/ \
+python mono_uncertainty/generate_maps.py --data_path kitti_data  --load_weights_folder S/S/stereo_depth_clue/models/weights_19/ \
                         --post_process \
                         --eval_split eigen_benchmark \
                         --eval_mono \
-                        --output_dir uncertainty/post/ \
+                        --output_dir uncertainty2/post/ \
 ```
 
 ```
@@ -55,8 +57,8 @@ python merge_fusion.py
 ```
 
 
-## Cite
-Implementation is based on the method in:
+## References
+Implementation is based on the method described in:
 ```
 @inproceedings{lu2022self,
   title={Self-supervised Depth Estimation from Spectral Consistency and Novel View Synthesis},
